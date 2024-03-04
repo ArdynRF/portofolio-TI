@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Paper Dashboard 2 by Creative Tim
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <!-- CSS Files -->
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
+</head>
+
+<style>
+  .checkbox-column-row {
+      /* row-count: 5; */
+      row-gap: 30px;
+      column-count: 2;
+      column-gap: 30px;
+  }
+  .check
+  .checkbox-item {
+      display: inline-block;
+      margin: 10px 0;
+      break-inside: avoid;
+  }
+</style>
+
+<body class="">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="white" data-active-color="danger">
+      <div class="logo">
+        <a href="https://www.creative-tim.com" class="simple-text logo-mini">
+          <div class="logo-image-small">
+            <img src="../assets/img/logo-small.png">
+          </div>
+          <!-- <p>CT</p> -->
+        </a>
+        <a href="https://www.creative-tim.com" class="simple-text logo-normal">
+          Creative Tim
+          <!-- <div class="logo-image-big">
+            <img src="../assets/img/logo-big.png">
+          </div> -->
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li>
+            <a href="/">
+              <i class="nc-icon nc-bank"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li class "active ">
+            <a href="/tambahapp">
+              <i class="nc-icon nc-single-02"></i>
+              <p>Tambah Aplikasi</p>
+            </a>
+          </li>
+          <li>
+            <a href="/listapp">
+              <i class="nc-icon nc-tile-56"></i>
+              <p>List Aplikasi</p>
+            </a>
+          </li>
+          <li>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="nc-icon nc-caps-small"></i>
+                <p>Data Lain</p>
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/table_perusahaan">Data Perusahaan</a>
+                <a class="dropdown-item" href="./page2.html">Halaman 2</a>
+                <!-- Tambahkan lebih banyak link halaman di sini -->
+              </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <div class="navbar-toggle">
+              <button type="button" class="navbar-toggler">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+            </div>
+            <a class="navbar-brand" href="javascript:;">Paper Dashboard 2</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navigation">
+            <form>
+              <div class="input-group no-border">
+                <input type="text" value="" class="form-control" placeholder="Search...">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <i class="nc-icon nc-zoom-split"></i>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link btn-magnify" href="javascript:;">
+                  <i class="nc-icon nc-layout-11"></i>
+                  <p>
+                    <span class="d-lg-none d-md-block">Stats</span>
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item btn-rotate dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="nc-icon nc-bell-55"></i>
+                  <p>
+                    <span class="d-lg-none d-md-block">Some Actions</span>
+                  </p>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn-rotate" href="javascript:;">
+                  <i class="nc-icon nc-settings-gear-65"></i>
+                  <p>
+                    <span class="d-lg-none d-md-block">Account</span>
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="content">
+        <div class="container">
+          <div class="content" style="padding-left: 150px;">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="card card-user">
+                  <div class="card-header">
+                    <h5 class="card-title">Tambah Aplikasi</h5>
+                  </div>
+                  <div class="card-body">
+                    <form>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label>Nama</label>
+                            <input type="text" class="form-control" placeholder="nama aplikasi" value="" name="nama_aplikasi">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-4 pr-1">
+                          <div class="form-group">
+                            <label>Tahun</label>
+                            <input type="text" class="form-control" placeholder="Tahun" name="tahun">
+                          </div>
+                        </div>
+                        <div class="col-md-4 px-1">
+                          <div class="form-group">
+                            <label>alias</label>
+                            <input type="text" class="form-control" placeholder="Nama Lain Aplikasi" name="alias">
+                          </div>
+                        </div>
+                        <div class="col-md-4 px-1">
+                          <div class="form-group">
+                            <label>status aplikasi</label>
+                            <select class="form-control" name="perusahaan">
+                              <option value="">Pilih status aplikasi</option>
+                              <!-- Tambahkan opsi perusahaan di sini -->
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-5 pr-1">
+                          <div class="form-group">
+                            <label>Perusahaan</label>
+                            <select class="form-control" name="perusahaan">
+                              <option value="">Pilih Perusahaan</option>
+                              <!-- Tambahkan opsi perusahaan di sini -->
+                            </select>
+                          </div>
+                        </div>
+                      </div>  
+                      
+                      <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Anak Perusahaan</label>
+                                <div class="checkbox-column-row">
+                                    <div class="checkbox-item"><input type="checkbox" name="ap"> ap 1</div>
+                                    <div class="checkbox-item"><input type="checkbox" name="ap"> ap 2</div>
+                                    <div class="checkbox-item"><input type="checkbox" name="ap"> ap 3</div>
+                                    <div class="checkbox-item"><input type="checkbox" name="ap"> ap 4</div>
+                                    <div class="checkbox-item"><input type="checkbox" name="ap"> ap 5</div>
+                                    <div class="checkbox-item"><input type="checkbox" name="ap"> ap 6</div>
+                                    <!-- Tambahkan lebih banyak kotak centang sesuai kebutuhan Anda -->
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 pr-1">
+                          <div class="form-group">
+                            <label>Value Chain</label>
+                            <select class="form-control" name="value_chain">
+                              <option value="">Pilih Value Chain</option>
+                              <!-- Tambahkan opsi value chain di sini -->
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-md-6 pl-1">
+                          <div class="form-group">
+                            <label>Kategori Sistem</label>
+                            <select class="form-control" name="kategori_sistem">
+                              <option value="">Pilih Kategori Sistem</option>
+                              <!-- Tambahkan opsi kategori sistem di sini -->
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Modul</label>
+                                <div class="checkbox-column-row">
+                                    <div class="checkbox-item"><input type="checkbox" name="modul" value="Modul1"> Modul 1</div>
+                                    <div class="checkbox-item"><input type="checkbox" name="modul" value="Modul2"> Modul 2</div>
+                                    <div class="checkbox-item"><input type="checkbox" name="modul" value="Modul3"> Modul 3</div>
+                                    <div class="checkbox-item"><input type="checkbox" name="modul" value="Modul4"> Modul 4</div>
+                                    <div class="checkbox-item"><input type="checkbox" name="modul" value="Modul5"> Modul 5</div>
+                                    <div class="checkbox-item"><input type="checkbox" name="modul" value="Modul6"> Modul 6</div>
+                                    <!-- Tambahkan lebih banyak kotak centang sesuai kebutuhan Anda -->
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+
+                    <div class="row">
+                      <div class="col-md-4 pr-1">
+                          <div class="form-group">
+                              <label>Provider</label>
+                              <select class="form-control" name="provider">
+                                  <option value="">Pilih Provider</option>
+                                  <!-- Tambahkan opsi lainnya di sini -->
+                              </select>
+                          </div>
+                      </div>
+                      <div class="col-md-4 px-1">
+                          <div class="form-group">
+                              <label>Contract Status</label>
+                              <select class="form-control" name="contract_status">
+                                  <option value="">Pilih Status Kontrak</option>
+                                  <!-- Tambahkan opsi lainnya di sini -->
+                              </select>
+                          </div>
+                      </div>
+                      <div class="col-md-4 pl-1">
+                          <div class="form-group">
+                              <label>Asset Status</label>
+                              <select class="form-control" name="asset_status">
+                                  <option value="">Pilih Status Aset</option>
+                                  <!-- Tambahkan opsi lainnya di sini -->
+                              </select>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Acquisition Cost</label>
+                        <input type="text" class="form-control" placeholder="Rp. xxx.xxx,xx" name="aqcuistion_cost">
+                      </div>
+                    </div>
+                  </div>
+
+                  
+                  <div class="row">
+                    <div class="col-md-6 pr-1">
+                      <div class="form-group">
+                        <label>Bussines Owner</label>
+                        <input type="text" class="form-control" placeholder="" >
+                      </div>
+                    </div>
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label>Development Vendor</label>
+                        <select class="form-control" name="dev_vendor">
+                          <option value="">Pilih Vendor</option>
+                          <!-- Tambahkan opsi lainnya di sini -->
+                      </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 pr-1">
+                      <div class="form-group">
+                        <label>Dev Type</label>
+                        <select class="form-control" name="dev_type">
+                          <option value="">Pilih Dev Type</option>
+                          <!-- Tambahkan opsi value chain di sini -->
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label>Dev Method</label>
+                        <select class="form-control" name="dev_method">
+                          <option value="">Pilih Dev Method</option>
+                          <!-- Tambahkan opsi kategori sistem di sini -->
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 pr-1">
+                      <div class="form-group">
+                        <label>Infrastructure</label>
+                        <select class="form-control" name="infrastructure">
+                          <option value="">Pilih Infrastructure</option>
+                          <!-- Tambahkan opsi value chain di sini -->
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label>Architecture</label>
+                        <select class="form-control" name="architecture">
+                          <option value="">Pilih Architecture</option>
+                          <!-- Tambahkan opsi kategori sistem di sini -->
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 pr-1">
+                      <div class="form-group">
+                        <label>Front End Language</label>
+                        <input type="text" class="form-control" placeholder="">
+                      </div>
+                    </div>
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label>Front End Framework</label>
+                        <input type="text" class="form-control" placeholder="">
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-md-4 pr-1">
+                      <div class="form-group">
+                        <label>Back End Language</label>
+                        <input type="text" class="form-control" placeholder="">
+                      </div>
+                    </div>
+                    <div class="col-md-4 px-1">
+                      <div class="form-group">
+                        <label>Back End Framework</label>
+                        <input type="text" class="form-control" placeholder="">
+                      </div>
+                    </div>
+                    <div class="col-md-4 pl-1">
+                      <div class="form-group">
+                        <label>Database</label>
+                        <input type="number" class="form-control" placeholder="">
+                      </div>
+                    </div>
+                  </div>
+                     
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label>Deskripsi</label>
+                            <textarea class="form-control textarea">Deskripsi Aplikasi Anda</textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="update ml-auto mr-auto">
+                          <button type="submit" class="btn btn-primary btn-round">Tambahkan Aplikasi</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      
+      
+      <footer class="footer footer-black  footer-white ">
+        <div class="container-fluid">
+          <div class="row">
+            <nav class="footer-nav">
+              <ul>
+                <li><a href="https://www.creative-tim.com" target="_blank">Creative Tim</a></li>
+                <li><a href="https://www.creative-tim.com/blog" target="_blank">Blog</a></li>
+                <li><a href="https://www.creative-tim.com/license" target="_blank">Licenses</a></li>
+              </ul>
+            </nav>
+            <div class="credits ml-auto">
+              <span class="copyright">
+                © <script>
+                  document.write(new Date().getFullYear())
+                </script>, made with <i class="fa fa-heart heart"></i> by Creative Tim
+              </span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <!--   Core JS Files   -->
+  <script src="../assets/js/core/jquery.min.js"></script>
+  <script src="../assets/js/core/popper.min.js"></script>
+  <script src="../assets/js/core/bootstrap.min.js"></script>
+  <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- Chart JS -->
+  <script src="../assets/js/plugins/chartjs.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="../assets/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"></script><!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+  <script src="../assets/demo/demo.js"></script>
+</body>
+
+</html>
