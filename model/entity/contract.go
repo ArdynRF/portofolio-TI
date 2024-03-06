@@ -1,7 +1,7 @@
 package entity
 
 // tabel 3
-type ContractStatus struct {
+type Contract struct {
 	IdContract string
-	Contract  string
+	Contract   string
 }
