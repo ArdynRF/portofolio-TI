@@ -8,7 +8,7 @@ import (
 	"github.com/ArdynRF/Portofolio-TI/controller"
 	"github.com/ArdynRF/Portofolio-TI/exception"
 	"github.com/ArdynRF/Portofolio-TI/helper"
-	"github.com/ArdynRF/Portofolio-TI/middleware"
+	// "github.com/ArdynRF/Portofolio-TI/middleware"
 	"github.com/ArdynRF/Portofolio-TI/repository"
 	"github.com/ArdynRF/Portofolio-TI/routes"
 	"github.com/ArdynRF/Portofolio-TI/service"
@@ -54,12 +54,12 @@ func main() {
 
 	router.PanicHandler = exception.ErrorHandler
 
-	server := http.Server{
-		Addr:    "localhost:3001",
-		Handler: middleware.NewAuthMiddleware(router),
-	}
-	err := server.ListenAndServe()
-	helper.PanicError(err)
+	// server := http.Server{
+	// 	Addr:    "localhost:3001",
+	// 	Handler: middleware.NewAuthMiddleware(router),
+	// }
+	// err := server.ListenAndServe()
+	// helper.PanicError(err)
 
 	fmt.Println("Hello World")
 
