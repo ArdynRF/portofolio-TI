@@ -42,43 +42,38 @@ type tabel_valuechain struct {
 	ValueChain    string
 }
 
-// tabel 8
-type tabel_acquisitioncost struct {
-	ID_Acquisition string
-	Acquisition    string
-}
 
-// tabel 9
+// tabel 8
 type tabel_developmentvendor struct {
 	ID_DevVendor string
 	DevVendor    string
 }
 
-// tabel 10
+// tabel 9
 type tabel_developmentmethod struct {
 	ID_DevMethod string
 	DevMethod    string
 }
 
-// tabel 11
+// tabel 10
 type tabel_developmenttype struct {
 	ID_DevType string
 	DevType    string
 }
 
-// tabel 12
+// tabel 11
 type tabel_architecture struct {
 	ID_Architecture string
 	Architecture    string
 }
 
-// tabel 13
+// tabel 12
 type tabel_infrastructure struct {
 	ID_Structure   string
 	Infrastructure string
 }
 
-// tabel 14
+// tabel 13
 type tabel_aplikasi struct {
 	ID_App            string
 	NamaApp           string
@@ -90,13 +85,13 @@ type tabel_aplikasi struct {
 	FrontEndFrame     string
 	BackEndLang       string
 	BackEndFrame      string
+	Acquisition       string
 	ID_Perusahaan     string
 	ID_AnakPerusahaan string
 	ID_Stat           string
 	ID_ValueChain     string
 	ID_Provider       string
 	ID_AssetStat      string
-	ID_Acquisition    string
 	ID_ContractStat   string
 	ID_DevVendor      string
 	ID_DevMethod      string

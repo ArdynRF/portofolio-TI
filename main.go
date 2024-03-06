@@ -4,8 +4,9 @@ import (
 	"fmt"
 	"net/http"
 
+	// "github.com/ArdynRF/Portofolio-TI/handler"
 	"github.com/ArdynRF/Portofolio-TI/routes"
-	"github.com/gin-gonic/gin"
+	// "github.com/gin-gonic/gin"
 )
 
 func main() {
@@ -17,7 +18,7 @@ func main() {
 
 	// router := gin.Default()
 
-	// router.GET("/", rootHandler)
+	// router.GET("/", handler.RootHandler)
 
 	// router.Run(":3000")
 
@@ -28,12 +29,4 @@ func main() {
 
 	http.ListenAndServe(":3000", nil)
 
-}
-
-func rootHandler(c *gin.Context) {
-
-	c.JSON(http.StatusOK, gin.H{
-		"name": "Ardyn Rezky Fahreza",
-		"umur": "21",
-	})
 }

@@ -194,7 +194,7 @@
                       </div>
 
                       <div class="row">
-                        <div class="col-md-5 pr-1">
+                        <div class="col-md-12">
                           <div class="form-group">
                             <label>Perusahaan</label>
                             <select class="form-control" name="perusahaan">
@@ -203,36 +203,10 @@
                             </select>
                           </div>
                         </div>
-                      </div>  
-                      
-                      <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Anak Perusahaan</label>
-                                <div class="checkbox-column-row">
-                                    <div class="checkbox-item"><input type="checkbox" name="ap"> ap 1</div>
-                                    <div class="checkbox-item"><input type="checkbox" name="ap"> ap 2</div>
-                                    <div class="checkbox-item"><input type="checkbox" name="ap"> ap 3</div>
-                                    <div class="checkbox-item"><input type="checkbox" name="ap"> ap 4</div>
-                                    <div class="checkbox-item"><input type="checkbox" name="ap"> ap 5</div>
-                                    <div class="checkbox-item"><input type="checkbox" name="ap"> ap 6</div>
-                                    <!-- Tambahkan lebih banyak kotak centang sesuai kebutuhan Anda -->
-                                </div>
-                            </div>
-                        </div>
-                      </div>
+                      </div>                      
 
                       <div class="row">
-                        <div class="col-md-6 pr-1">
-                          <div class="form-group">
-                            <label>Value Chain</label>
-                            <select class="form-control" name="value_chain">
-                              <option value="">Pilih Value Chain</option>
-                              <!-- Tambahkan opsi value chain di sini -->
-                            </select>
-                          </div>
-                        </div>
-                        <div class="col-md-6 pl-1">
+                        <div class="col-md-12">
                           <div class="form-group">
                             <label>Kategori Sistem</label>
                             <select class="form-control" name="kategori_sistem">
@@ -242,18 +216,36 @@
                           </div>
                         </div>
                       </div>
+
+                      <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group" id="moduleFields">
+                                <label>Modul</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Modul" name="module[]">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary btn-sm addModuleBtn" type="button">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                                                <path d="M8 7V3a1 1 0 0 0-2 0v4H3a1 1 0 1 0 0 2h3v4a1 1 0 1 0 2 0V9h3a1 1 0 0 0 0-2H8z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                       
                       <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label>Modul</label>
+                                <label>Value Chain</label>
                                 <div class="checkbox-column-row">
-                                    <div class="checkbox-item"><input type="checkbox" name="modul" value="Modul1"> Modul 1</div>
-                                    <div class="checkbox-item"><input type="checkbox" name="modul" value="Modul2"> Modul 2</div>
-                                    <div class="checkbox-item"><input type="checkbox" name="modul" value="Modul3"> Modul 3</div>
-                                    <div class="checkbox-item"><input type="checkbox" name="modul" value="Modul4"> Modul 4</div>
-                                    <div class="checkbox-item"><input type="checkbox" name="modul" value="Modul5"> Modul 5</div>
-                                    <div class="checkbox-item"><input type="checkbox" name="modul" value="Modul6"> Modul 6</div>
+                                    <div class="checkbox-item"><input type="checkbox" name="valuechain" > valuechain 1</div>
+                                    <div class="checkbox-item"><input type="checkbox" name="valuechain" > valuechain 2</div>
+                                    <div class="checkbox-item"><input type="checkbox" name="valuechain" > valuechain 3</div>
+                                    <div class="checkbox-item"><input type="checkbox" name="valuechain" > valuechain 4</div>
+                                    <div class="checkbox-item"><input type="checkbox" name="valuechain" > valuechain 5</div>
+                                    <div class="checkbox-item"><input type="checkbox" name="valuechain" > valuechain 6</div>
                                     <!-- Tambahkan lebih banyak kotak centang sesuai kebutuhan Anda -->
                                 </div>
                             </div>
@@ -457,6 +449,45 @@
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"></script><!-- Paper Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
+
+  html
+  Copy code
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+      document.querySelector('.addModuleBtn').addEventListener('click', addModuleField);
+  });
+  
+  function addModuleField() {
+      var moduleFields = document.getElementById('moduleFields');
+      var inputGroup = document.createElement('div');
+      inputGroup.classList.add('input-group', 'mb-3');
+  
+      var input = document.createElement('input');
+      input.type = 'text';
+      input.classList.add('form-control');
+      input.placeholder = 'Rp. xxx.xxx,xx';
+      input.name = 'module[]';
+  
+      var appendDiv = document.createElement('div');
+      appendDiv.classList.add('input-group-append');
+  
+      var removeButton = document.createElement('button');
+      removeButton.classList.add('btn', 'btn-outline-secondary', 'btn-sm', 'removeModuleBtn');
+      removeButton.type = 'button';
+      removeButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16"><path d="M0 7.5a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"/></svg>';
+      removeButton.addEventListener('click', function() {
+          moduleFields.removeChild(inputGroup);
+      });
+  
+      appendDiv.appendChild(removeButton);
+  
+      inputGroup.appendChild(input);
+      inputGroup.appendChild(appendDiv);
+  
+      moduleFields.appendChild(inputGroup);
+  }
+  </script>
+    
 </body>
 
 </html>
