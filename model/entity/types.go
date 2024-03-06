@@ -2,6 +2,6 @@ package entity
 
 
 type Types struct {
-	IdType string
-	Type    string
+	Id_Type string
+	Nama_Type    string
 }

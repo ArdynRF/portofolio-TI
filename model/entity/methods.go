@@ -2,6 +2,6 @@ package entity
 
 // tabel 9
 type Methods struct {
-	IdMethod string
-	Method    string
+	Id_Method string
+	Nama_Method    string
 }

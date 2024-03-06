@@ -2,6 +2,6 @@ package entity
 
 // tabel 11
 type Architectures struct {
-	IdArchitecture string
-	Architecture    string
+	Id_Architecture   int64
+	Nama_Architecture string
 }

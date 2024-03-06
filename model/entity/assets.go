@@ -2,6 +2,6 @@ package entity
 
 // tabel 5
 type Assets struct {
-	IdAssets string
-	Assets   string
+	Id_Assets string
+	Nama_Assets   string
 }
