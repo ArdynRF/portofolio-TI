@@ -1,0 +1,79 @@
+package repository
+
+import (
+	"context"
+	"database/sql"
+	"errors"
+	"fmt"
+
+	"github.com/ArdynRF/Portofolio-TI/helper"
+	"github.com/ArdynRF/Portofolio-TI/model/entity"
+)
+
+type UserRepositoryImpl struct{}
+
+func NewUserRepositoryImpl() UserRepository {
+	return &UserRepositoryImpl{}
+}
+func (repository *UserRepositoryImpl) Create(ctx context.Context, tx *sql.Tx, user entity.Users) entity.Users {
+	SQL := "INSERT INTO users (id,username,email,password,nama,role,created_at,updated_at) VALUES (?,?,?,?,?,?,?,?)"
+	_, err := tx.ExecContext(ctx, SQL, user.Id, user.Username, user.Email, user.Password, user.Nama, user.Role, user.CreatedAt, user.UpdatedAt)
+	helper.PanicError(err)
+	fmt.Println(user)
+	return user
+}
+func (repository *UserRepositoryImpl) Update(ctx context.Context, tx *sql.Tx, user entity.Users) entity.Users {
+	SQL := "UPDATE users SET username=?, nama=?, role=?,updated_at=? WHERE id=? "
+	_, err := tx.ExecContext(ctx, SQL, user.Username, user.Nama, user.Role, user.UpdatedAt, user.Id)
+	helper.PanicError(err)
+	return user
+}
+
+func (repository *UserRepositoryImpl) Delete(ctx context.Context, tx *sql.Tx, user entity.Users) {
+	SQL := "DELETE FROM users WHERE id=?"
+	_, err := tx.ExecContext(ctx, SQL, user.Id)
+	helper.PanicError(err)
+
+}
+func (repository *UserRepositoryImpl) FindById(ctx context.Context, tx *sql.Tx, userId string) (entity.Users, error) {
+	SQL := "SELECT id, username,email,nama,role,created_at,updated_at FROM users WHERE id=?"
+	rows, err := tx.QueryContext(ctx, SQL, userId)
+	helper.PanicError(err)
+	defer rows.Close()
+	user := entity.Users{}
+	if rows.Next() {
+		err := rows.Scan(&user.Id, &user.Username, &user.Email, &user.Nama, &user.Role, &user.CreatedAt, &user.UpdatedAt)
+		helper.PanicError(err)
+		return user, nil
+	} else {
+		return user, errors.New("user not found")
+	}
+}
+func (repository *UserRepositoryImpl) FindByEmail(ctx context.Context, tx *sql.Tx, email string) (entity.Users, error) {
+	SQL := "SELECT id, username,email,password,nama,role,created_at,updated_at FROM users WHERE email=?"
+	rows, err := tx.QueryContext(ctx, SQL, email)
+	helper.PanicError(err)
+	defer rows.Close()
+
+	user := entity.Users{}
+	if rows.Next() {
+		err := rows.Scan(&user.Id, &user.Username, &user.Email, &user.Password, &user.Nama, &user.Role, &user.CreatedAt, &user.UpdatedAt)
+		helper.PanicError(err)
+		return user, nil
+	} else {
+		return user, errors.New("user not found")
+	}
+}
+func (repository *UserRepositoryImpl) FindAll(ctx context.Context, tx *sql.Tx) []entity.Users {
+	SQL := "SELECT id,username,email,nama,role,created_at,updated_at FROM users"
+	rows, err := tx.QueryContext(ctx, SQL)
+	helper.PanicError(err)
+	var users []entity.Users
+	for rows.Next() {
+		user := entity.Users{}
+		err := rows.Scan(&user.Id, &user.Username, &user.Email, &user.Nama, &user.Role, &user.CreatedAt, &user.UpdatedAt)
+		helper.PanicError(err)
+		users = append(users, user)
+	}
+	return users
+}
