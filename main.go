@@ -8,9 +8,9 @@ import (
 	"github.com/ArdynRF/Portofolio-TI/controller"
 	"github.com/ArdynRF/Portofolio-TI/exception"
 	"github.com/ArdynRF/Portofolio-TI/helper"
-
-	// "github.com/ArdynRF/Portofolio-TI/middleware"
+	"github.com/ArdynRF/Portofolio-TI/middleware"
 	"github.com/ArdynRF/Portofolio-TI/repository"
+	"github.com/ArdynRF/Portofolio-TI/routes"
 	"github.com/ArdynRF/Portofolio-TI/service"
 	"github.com/joho/godotenv"
 
@@ -52,14 +52,21 @@ func main() {
 	router.GET("/api/v1/user/:user_id", userController.FindById)
 	router.GET("/api/v1/user", userController.FindAll)
 
+	// [WEB]
+	router.GET("/", routes.Dashboard)
+	router.GET("/table_perusahaan", routes.Perusahaan)
+	router.GET("/listapp", routes.ListApp)
+	router.GET("/tambahapp", routes.TambahApp)
+
 	router.PanicHandler = exception.ErrorHandler
 
-	// server := http.Server{
-	// 	Addr:    "localhost:3001",
-	// 	Handler: middleware.NewAuthMiddleware(router),
-	// }
-	// err := server.ListenAndServe()
-	// helper.PanicError(err)
+	router.ServeFiles("/assets/*filepath", http.Dir("assets")) // ASsets Static
+	server := http.Server{
+		Addr:    "localhost:3001",
+		Handler: middleware.NewAuthMiddleware(router),
+	}
+	err := server.ListenAndServe()
+	helper.PanicError(err)
 
 	fmt.Println("Hello World")
 
@@ -71,11 +78,6 @@ func main() {
 	// router.GET("/", handler.RootHandler)
 
 	// router.Run(":3000")
-
-	// http.HandleFunc("/", routes.Dashboard)
-	// http.HandleFunc("/table_perusahaan", routes.Perusahaan)
-	// http.HandleFunc("/listapp", routes.ListApp)
-	// http.HandleFunc("/tambahapp", routes.TambahApp)
 
 	// http.ListenAndServe(":3000", nil)
 
