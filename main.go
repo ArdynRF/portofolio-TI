@@ -8,9 +8,9 @@ import (
 	"github.com/ArdynRF/Portofolio-TI/controller"
 	"github.com/ArdynRF/Portofolio-TI/exception"
 	"github.com/ArdynRF/Portofolio-TI/helper"
+
 	// "github.com/ArdynRF/Portofolio-TI/middleware"
 	"github.com/ArdynRF/Portofolio-TI/repository"
-	"github.com/ArdynRF/Portofolio-TI/routes"
 	"github.com/ArdynRF/Portofolio-TI/service"
 	"github.com/joho/godotenv"
 
@@ -72,11 +72,11 @@ func main() {
 
 	// router.Run(":3000")
 
-	http.HandleFunc("/", routes.Dashboard)
-	http.HandleFunc("/table_perusahaan", routes.Perusahaan)
-	http.HandleFunc("/listapp", routes.ListApp)
-	http.HandleFunc("/tambahapp", routes.TambahApp)
+	// http.HandleFunc("/", routes.Dashboard)
+	// http.HandleFunc("/table_perusahaan", routes.Perusahaan)
+	// http.HandleFunc("/listapp", routes.ListApp)
+	// http.HandleFunc("/tambahapp", routes.TambahApp)
 
-	http.ListenAndServe(":3000", nil)
+	// http.ListenAndServe(":3000", nil)
 
 }

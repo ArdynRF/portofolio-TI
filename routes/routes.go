@@ -3,43 +3,46 @@ package routes
 import (
 	"net/http"
 	"text/template"
+
+	"github.com/julienschmidt/httprouter"
 )
 
-func Dashboard(response http.ResponseWriter, request *http.Request) {
+func Dashboard(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 
 	temp, err := template.ParseFiles("views/index.html")
 	if err != nil {
 		panic(err)
 	}
-	temp.Execute(response, nil)
+	temp.Execute(w, nil)
 
 }
-func Perusahaan(response http.ResponseWriter, request *http.Request) {
+
+func Perusahaan(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 
 	temp, err := template.ParseFiles("views/table_perusahaan.html")
 	if err != nil {
 		panic(err)
 	}
-	temp.Execute(response, nil)
+	temp.Execute(w, nil)
 
 }
 
-func ListApp(response http.ResponseWriter, request *http.Request) {
+func ListApp(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 
 	temp, err := template.ParseFiles("views/list.html")
 	if err != nil {
 		panic(err)
 	}
-	temp.Execute(response, nil)
+	temp.Execute(w, nil)
 
 }
 
-func TambahApp(response http.ResponseWriter, request *http.Request) {
+func TambahApp(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 
 	temp, err := template.ParseFiles("views/tambahapp.html")
 	if err != nil {
 		panic(err)
 	}
-	temp.Execute(response, nil)
+	temp.Execute(w, nil)
 
 }
