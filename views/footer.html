@@ -52,21 +52,26 @@
 src="../assets/js/paper-dashboard.min.js?v=2.0.1"
 type="text/javascript"
 ></script>
-<!-- Paper Dashboard DEMO methods, don't include it in your project! -->
 <script src="../assets/demo/demo.js"></script>
 <script src="../assets/js/portofolio.js"></script>
 <script src="../assets/js/view_all.js"></script>
-<script>
-$(document).ready(function () {
-  // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
-  demo.initChartsPages();
-});
-</script>
+<script src="../assets/js/sidebar.js"></script>
+<script src="../assets/js/form.js"></script>
+
+<!-- 
 <script
 src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"
 integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew=="
 crossorigin="anonymous"
 referrerpolicy="no-referrer"
-></script>
+></script> -->
+
+
+
+<script>
+ document.addEventListener('DOMContentLoaded', function() {
+  document.querySelector('.addModuleBtn').addEventListener('click', addModuleField);
+});
+  </script>
 </body>
 </html>
