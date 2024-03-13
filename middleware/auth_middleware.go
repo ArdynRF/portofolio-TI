@@ -31,7 +31,7 @@ func (middleware *AuthMiddleware) unauthorized(writer http.ResponseWriter, reque
 
 func (middleware *AuthMiddleware) ServeHTTP(writer http.ResponseWriter, request *http.Request) {
 
-	if request.RequestURI == "/api/v1/auth" {
+	if request.RequestURI == "/api/v1/auth" || request.RequestURI == "/" {
 		middleware.Handler.ServeHTTP(writer, request)
 	} else {
 		tokenAuth := request.Header.Get("Authorization")

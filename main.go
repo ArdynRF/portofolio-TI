@@ -8,6 +8,7 @@ import (
 	"github.com/ArdynRF/Portofolio-TI/controller"
 	"github.com/ArdynRF/Portofolio-TI/exception"
 	"github.com/ArdynRF/Portofolio-TI/helper"
+	"github.com/ArdynRF/Portofolio-TI/middleware"
 
 	// "github.com/ArdynRF/Portofolio-TI/middleware"
 	"github.com/ArdynRF/Portofolio-TI/repository"
@@ -54,31 +55,23 @@ func main() {
 	router.GET("/api/v1/user", userController.FindAll)
 
 	// [WEB]
-	router.GET("/", routes.Dashboard)
+	router.GET("/", routes.Login)
 	router.GET("/table_perusahaan", routes.Perusahaan)
 	router.GET("/listapp", routes.ListApp)
 	router.GET("/tambahapp", routes.TambahApp)
+	router.GET("/dashboard", routes.Dashboard)
 
 	router.PanicHandler = exception.ErrorHandler
 
 	router.ServeFiles("/assets/*filepath", http.Dir("assets")) // ASsets Static
-	// server := http.Server{
-	// 	Addr: "localhost:3001",
-	// 	Handler: middleware.NewAuthMiddleware(router),
-	// }
-	// err := server.ListenAndServe()
-	// helper.PanicError(err)
+
+	server := http.Server{
+		Addr:    "localhost:3001",
+		Handler: middleware.NewAuthMiddleware(router),
+	}
+	err := server.ListenAndServe()
+	helper.PanicError(err)
 
 	fmt.Println("Hello World")
-
-	http.ListenAndServe("localhost:8888", router)
-
-	// router := gin.Default()
-
-	// router.GET("/", handler.RootHandler)
-
-	// router.Run(":3000")
-
-	// http.ListenAndServe(":3000", nil)
 
 }

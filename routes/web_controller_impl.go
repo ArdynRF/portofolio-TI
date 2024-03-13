@@ -99,3 +99,26 @@ func TambahApp(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 		return
 	}
 }
+
+func Login(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+
+	// ParseFiles akan membaca file template Anda dan mengembalikan *template.Template
+	tmpl, err := template.ParseFiles("views/login.html")
+	if err != nil {
+		// Jangan lupa untuk menangani error
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	// Anda bisa meneruskan data ke Execute untuk digunakan dalam template Anda
+	data := map[string]interface{}{
+		// Isi dengan data Anda
+	}
+
+	err = tmpl.ExecuteTemplate(w, "login.html", data)
+	if err != nil {
+		// Jangan lupa untuk menangani error
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+}
