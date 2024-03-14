@@ -1,6 +1,7 @@
 package aplikasi
 
-type AplikasiCreateRequest struct {
+type AplikasiResponse struct {
+	Id_App            int64  `json:"id_app"`
 	NamaApp           string `json: "nama_app"`
 	Tahun             int64  `json: "tahun"`
 	Alias             string `json: "alias"`
@@ -24,4 +25,6 @@ type AplikasiCreateRequest struct {
 	Id_Type           int64  `json: "id_type"`
 	Id_Architecture   int64  `json: "id_architecture"`
 	Id_Infrastructure int64  `json: "id_infrastructure"`
+	Created_At        int64  `json:created_at"`
+	Updated_At        int64  `json:updated_at`
 }

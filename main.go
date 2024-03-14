@@ -34,12 +34,15 @@ func main() {
 
 	//repo
 	userRepository := repository.NewUserRepositoryImpl()
+	aplikasiRepository := repository.NewAplikasiRepositoryImpl()
 
 	//service
 	userService := service.NewUserServiceImpl(userRepository, db, validate)
+	aplikasiService := service.NewAplikasiServiceImpl(aplikasiRepository, db, validate)
 
 	//user controller
 	userController := controller.NewUserControllerImpl(userService)
+	aplikasiController := controller.NewAplikasiControllerImpl(aplikasiService)
 
 	// initialize router
 	router := httprouter.New()
@@ -53,6 +56,7 @@ func main() {
 	router.DELETE("/api/v1/user/:user_id", userController.Delete)
 	router.GET("/api/v1/user/:user_id", userController.FindById)
 	router.GET("/api/v1/user", userController.FindAll)
+	router.POST("/api/v1/aplikasi", aplikasiController.Create)
 
 	// [WEB]
 	router.GET("/", routes.Login)

@@ -14,16 +14,18 @@ type Aplikasi struct {
 	BackEndFrame      string
 	Acquisition       string
 	Foto              string
+	Provider          string
+	Vendor            string
 	Id_Perusahaan     int64
 	Id_Category       int64
 	Id_Status         int64
 	Id_ValueChain     int64
-	Id_Provider       int64
 	Id_Assets         int64
 	Id_Contract       int64
-	Id_Vendor         int64
 	Id_Method         int64
 	Id_Type           int64
 	Id_Architecture   int64
 	Id_Infrastructure int64
+	Created_At        int64
+	Updated_At        int64
 }
