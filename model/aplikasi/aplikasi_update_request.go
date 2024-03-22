@@ -1,6 +1,6 @@
 package aplikasi
 
-type AplikasiResponse struct {
+type AplikasiUpdateRequest struct {
 	Id_App            int64  `json:"id_app"`
 	NamaApp           string `json: "nama_app"`
 	Tahun             int64  `json: "tahun"`
@@ -23,10 +23,9 @@ type AplikasiResponse struct {
 	Id_Contract       int64  `json: "id_contract"`
 	Id_Method         int64  `json: "id_method"`
 	Id_Type           int64  `json: "id_type"`
-	Id_Architecture   int64  `json: S"id_architecture"`
+	Id_Architecture   int64  `json: "id_architecture"`
 	Id_Infrastructure int64  `json: "id_infrastructure"`
-	Created_At        int64  `json:created_at"`
-	Updated_At        int64  `json:updated_at`
+	Updated_At        int64  `json: updated_at`
 	Review            bool   `json: review`
 	Approval          bool   `json: approval`
 }

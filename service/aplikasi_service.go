@@ -8,6 +8,7 @@ import (
 
 type AplikasiService interface {
 	Create(ctx context.Context, request aplikasi.AplikasiCreateRequest) aplikasi.AplikasiResponse
-	// Update(ctx context.Context, request web.UsersUpdateRequest) web.UsersResponse
-	// Delete(ctx context.Context, userId string)
+	Update(ctx context.Context, request aplikasi.AplikasiUpdateRequest) aplikasi.AplikasiResponse
+	Delete(ctx context.Context, appId int64)
+	FindById(ctx context.Context, appId int64) aplikasi.AplikasiResponse
 }

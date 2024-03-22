@@ -28,4 +28,6 @@ type Aplikasi struct {
 	Id_Infrastructure int64
 	Created_At        int64
 	Updated_At        int64
+	Review            bool
+	Approval          bool
 }
